@@ -7,7 +7,9 @@
         public const int n = 5; //wielkosc tablicy
 
         static void Main(string[] args)
-        {/*
+        {
+            
+            /*
             int tmp = 0;
             int[] t1 = { 12, 3545, 343 };
             int[] t2 = new int[100];
