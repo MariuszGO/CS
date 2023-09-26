@@ -7,14 +7,31 @@
         public const int n = 5; //wielkosc tablicy
 
         static void Main(string[] args)
-        {
-            
+        {/*
+            // int tab[100];  //język C i C++ 
+            int[] tablica = new int[10];
+
+            //tablica[0] = 85;
+
+            Random r = new Random();
+
+            for (int i = 0; i < tablica.Length; i++)
+            {
+                tablica[i] = r.Next(0,10);
+                Console.Write(tablica[i] + " ");
+            }
+
+            */
+
+
+            //zakres 0 do 10
             /*
             int tmp = 0;
-            int[] t1 = { 12, 3545, 343 };
-            int[] t2 = new int[100];
+            
+            
             int[] t = new int[n];
             Random l = new Random();
+            int zl=0;
 
             for (int i = 0; i < n; i++)
             {
@@ -26,6 +43,7 @@
             {
                 for(int j = 0; j < n-1; j++)
                 {
+                    zl++;
                     if (t[j] > t[j + 1])
                     {
                         tmp = t[j];
@@ -41,17 +59,22 @@
              
                 Console.Write(t[i] + " ");
             }
+            Console.Write("złożoność: " + zl);
 
+            */
 
-*/
+            int[,] a = new int[n, n]; //tablica dwuwymiarowa
+            int[,] b = new int[n, n]; //tablica dwuwymiarowa
+            int[,] c = new int[n, n];
 
-            int[,] tab = new int[n, n]; //tablica dwuwymiarowa
             Random ll = new Random();
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    tab[i, j] = ll.Next(100, 888);
+                    a[i, j] = ll.Next(10, 30);
+                    b[i, j] = ll.Next(10, 30);
+
                 }
             }
 
@@ -59,11 +82,30 @@
             {
                 for (int j = 0; j < n; j++)
                 {
-                    Console.Write(" [" + i + ","+ j +"] = " + tab[i, j]);
+                    Console.Write(" [" + i + ","+ j +"] = " + a[i, j]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("********************************");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    Console.Write(" [" + i + "," + j + "] = " + b[i, j]);
                 }
                 Console.WriteLine();
             }
 
+            Console.WriteLine("********************************");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    c[i, j] = a[i, j] + b[i, j];
+                    Console.Write(" [" + i + "," + j + "] = " + c[i, j]);
+                }
+                Console.WriteLine();
+            }
 
 
         }
