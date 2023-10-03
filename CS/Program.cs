@@ -4,7 +4,7 @@
 
     internal class Program
     {
-        public const int n = 5; //wielkosc tablicy
+        public const int n = 10000; //wielkosc tablicy
 
         static void Main(string[] args)
         {/*
@@ -82,31 +82,47 @@
             {
                 for (int j = 0; j < n; j++)
                 {
-                    Console.Write(" [" + i + ","+ j +"] = " + a[i, j]);
+               //     Console.Write(" [" + i + ","+ j +"] = " + a[i, j]);
                 }
-                Console.WriteLine();
+          //      Console.WriteLine();
             }
-            Console.WriteLine("********************************");
+            
+
+          //  Console.WriteLine("********************************");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    Console.Write(" [" + i + "," + j + "] = " + b[i, j]);
+                 //   Console.Write(" [" + i + "," + j + "] = " + b[i, j]);
                 }
-                Console.WriteLine();
+              //  Console.WriteLine();
             }
 
-            Console.WriteLine("********************************");
             for (int i = 0; i < n; i++)
             {
                 for (int j = 0; j < n; j++)
                 {
-                    c[i, j] = a[i, j] + b[i, j];
-                    Console.Write(" [" + i + "," + j + "] = " + c[i, j]);
+                    for (int k = 0; k < n; k++)
+                    {
+                        c[i, j] = c[i, j] + a[i, k] * b[k, j];
+
+                    }
+
+
                 }
-                Console.WriteLine();
             }
 
+                    Console.WriteLine("********************************");
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                   // c[i, j] = a[i, j] + b[i, j]; //dodawanie
+              //      Console.Write(" [" + i + "," + j + "] = " + c[i, j]);
+                }
+            //    Console.WriteLine();
+            }
+            
 
         }
     }
